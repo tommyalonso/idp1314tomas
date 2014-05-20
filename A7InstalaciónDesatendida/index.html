@@ -1,0 +1,131 @@
+<html>
+<head>
+	<title>Instalación desatendida</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Sistemas Operativos</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i>Instalación desatendida</i></li>
+    <li><b>Componentes del grupo:</b> <i>Aitor Machado y Tomás Rodríguez</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2013/2014</i></li>
+    <li><b>Fecha de entrega:</b> <i>20 de Mayo de 2014</i></li>
+  </ul>
+  </div>
+</div>
+<div style='float: clear;background-color: #eeeeee; border:2px solid; border-radius:10px; padding: 10px;'>
+<a href='#bloque1'>1. Descarga del WAIK e instalación</a> | <a href='#bloque2'>2. Elaboración de la imagen desatendida</a> | <a href='#bloque3'>3. Creación y prueba de la ISO</a> | </div>
+
+<h1><a id='bloque1'>1. Descarga del WAIK e instalación.</a></h1>
+<p> La práctica consiste en la creación de una imagen ISO de windows 7 con instalación desatendida, en otras palabras, el 
+sistema operativo se instala en la máquina sin necesidad de que un usuario supervise la instalación. Para ello hemos necesitado
+instalar el Kit de instalación Automatizada de Windows 7 "WAIK". <br /></p>
+<ul type="square">
+  <img width="500" border="1" height="450" src="./files/1.png"></img>
+  <img width="500" border="1" height="450" src="./files/4.png"></img>
+  <img width="500" border="1" height="450" src="./files/5.png"></img>
+</ul>
+
+<h2><a id='bloque2'>2. Creación de la imagen desatendida.</a></h1>
+<p>Para realizar la imagen desatendida hemos realizado los siguiente pasos:<br /></p>
+<ul type="square">
+  <li>Primero deberemos copiar el contenido del DVD o la imagen ISO a una carpeta y situarla por ejemplo
+   en C:\ de tal forma que la ruta sea C:\W7</li><br>
+
+<img width="500" border="1" height="450" src="./files/2.png"></img>
+<img width="500" border="1" height="450" src="./files/2.1.png"></img>
+<img width="500" border="1" height="450"src="./files/2.2.png"></img> 
+  <br><br>
+  
+  <li>Después, teniendo instalada la herramienta WAIK, nos vamos a Inicio > Todos los programas > Microsoft Windows AIK 
+  > Administrador de imágenes del sistema de Windows. Lo ejecutamos como administrador..</li>
+  
+  <img width="500" border="1" height="450" src="./files/6.png"></img>
+  
+   <br><br>
+   
+  <li>Ahora deberemos crear un catálogo que es el que nos dirá que tiene, que se puede y no se 
+  puede hacer dentro de la imagen seleccionada de Windows 7. Para ello nos vamos a Archivo > 
+  Seleccionar imagen de Windows y buscamos el archivo install.wim que en este caso se encuentra
+  en C:\W7\Sources\install.wim, lo abrimos y nos saldrá una ventana en la que deberemos elegir 
+  la versión de Windows 7 para la que queremos crear el archivo de autorespuesta. En este caso es Windows 7 Professional.</li>
+     <br><br>
+     
+   <img width="500" border="1" height="450" src="./files/7.png"></img>
+   <img width="500" border="1" height="450" src="./files/8.png"></img>
+   <br><br>
+   
+   <li>Nos saldrá en la esquina inferior izquierda una lista que podemos desplegar con diferentes componentes y paquetes:</li>
+    <img  src="./files/9.png"></img>
+    
+    <br><br>
+   <li>Una vez hemos añadido la imagen, deberemos crear el archivo de Autorespuesta que configuraremos posteriormente; para ello nos vamos a Archivo > Nuevo archivo de respuesta.</li>
+   <img  src="./files/10.png"></img>
+   
+   <br><br>
+   <li>Ahora deberemos agregar al archivo las respuesta los componentes de cada secuencia de la instalación. 
+   Para ello, por ejemplo, en el componente amd64_Microsoft-Windows-International-Core-WinPE_6.1.7600.16385_neutral.
+   Luego haremos click derecho y seleccionamos Agregar configuración al ciclo 1 windowsPE</li>
+   
+    <img width="500" border="1" height="450" src="./files/11.png"></img>
+
+<br><br>
+
+    <li>Ahora configuraremos las opciones del componente en el panel de la derecha, en este caso utilizaremos es-ES 
+    ya que queremos que la instalación sea en español. </li>
+    
+      <img  src="./files/13.png"></img>
+      <img  src="./files/14.png"></img>
+      
+    <li>Adjunto una tabla con los componentes y configuraciones que hemos usado en esta práctica.</li>
+    <br>
+     <center><img width="500" border="1" height="450" src="./files/tabla.jpg"></img></center>
+    
+    <br>
+     
+    <li>Para terminar sólo debemos guardar el archivo de respuesta en Archivo > Guardar archivo de respuesta
+     como > ruta donde está los archivos del windows a instalar, el nombre debe ser Autounattend.xml es muy 
+     importante ya que el sistema sólo reconocerá el archivo si tiene este nombre.</li>
+     
+     <img width="500" border="1" height="450" src="./files/45.png">
+     <br><br>
+     
+     <li>Para que se inicie de forma automática la instalación de las aplicaciones que queramos al iniciarse
+      el sistema después de su instalación deberemos agregar el componente: Microsoft-Windows-Shell-Setup_neutral 
+      > FirstLogonCommands > Synchronous Command. En nuestro caso <b>hemos elegido el CCleaner.</b></li>
+      
+      <img src="./files/47.png">
+</ul>
+
+<h2><a id='bloque3'></a>3. Creación y prueba de la ISO.</h1>
+<ul type="square">
+	
+	<li>Abrimos desde  Inicio > Todos los programas > Microsoft Windows AIK > Línea de comandos de las herramientas
+	 de implementación y se nos abrirá una consola de comandos. Seguidamente escribimos <b>oscdimg –n –m –bRuta_de_directorio\boot\etfsboot.com
+	 Ruta_de_directorio   Ruta_de_directorio_ a_guardar\ Nombre_de_imagen.iso</b></li>
+	 <br><br>
+	  <img width="500" border="1" height="450" src="./files/48.png">
+<br><br>
+
+    <li>Si todo es correcto comenzará la creación de nuestra ISO desatendida lista para ser usada.</li>
+      <img src="./files/49.png">
+      
+      <br><br>
+      
+    <li>Al crear la máquina y introducir la ISO, el windows me ha dado el siguiente error: 0xc0000225 y lo
+    hemos solucionado yendo a la BIOS de la máquina virtual y seleccionando "Habilitar IO APIC".</li>  
+    
+    <img width="500" border="1" height="450" src="./files/50.png">
+    <br><br>
+    
+    <li>Al solucionar el problema, hemos podido usar la ISO sin ningún problema.</li>
+    
+    <img width="500" border="1" height="450" src="./files/51.png">
+</body>
+</html>
+ 
