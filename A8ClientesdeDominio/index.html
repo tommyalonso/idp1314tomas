@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>idp1314: A8: Clientes de Dominio</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body> 
+<div style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+	  <font face="ubuntu">
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Sistemas Operativos</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i>A8: Clientes de Dominio</i></li>
+    <li><b>Componentes del grupo:</b> <i>Tom&aacute;s Rodr&iacute;guez Alonso</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2013/2014</i></li>
+    <li><b>Fecha de entrega:</b> <i>2 de Junio de 2014</i></li>
+  </ul>
+  </div>
+</div>
+<div style='float: clear;background-color: #92B6FA; border:2px solid; border-radius:10px; padding: 10px;'>
+<a href='#bloque1'>1. Configurar clientes</a> | <a href='#bloque2'>2. Unirse al dominio</a> | <a href='#bloque3'>3. Comprobación</a></div>
+
+<center><h1><font color="#5454A5">Clientes de Dominio</font></h1></center>
+<center><img src='./files/serverlogo.png'/></center>
+
+<center><h1><a id='bloque1'><u>1. Configurar clientes</u></a></h1></center>
+<li>Configuramos la IP de la máquina</li>
+<p><center><img border="3px" src='./files/ip.png'/></center></p>
+
+<li>Para configurar los servidores DNS editar el archivo /etc/resolv.conf</li>
+<p><center><img border="3px" src='./files/resolvconf.png'/></center></p>
+
+<li>Comprobar configuración DNS:</li>
+<p><center><img border="3px" src='./files/nanoresolv.png'/></center></p>
+
+<p>hacemos un nslookup: <b>nslookup www.iespuertodelacruz.es</b></p>
+<p><center><img border="3px" src='./files/ies.png'/></center></p>
+
+<center><h1><a id='bloque2'><u>2. Unirse al dominio</u></a></h1></center>
+<li>Instalar los paquetes: likewise-open y likewise-open-gui</li>
+<p> Una vez instalado el programa Likewise lo ejecutamos con el comando <b>domainjoin-gui</b></p>
+<center><img border="3px" src='./files/join.png'/></center>
+
+<p>Completamos la información que nos pide:</p>
+<p><center><img border="3px" src='./files/joinin.png'/></center></p>
+
+<center><h1><a id='bloque3'><u>3. Unirse al dominio</u></a></h1></center>
+<p>Entramos con cualquier usuario en este caso <B>yoda</B> y comprobamos que efectivamente esta todo correcto y funciona:</p>
+<p><center><img border="3px" src='./files/comprobar.png'/></center></p>
+<p>Podemos ver que en la consola aparece</p>
+
+</body>
+</html>
